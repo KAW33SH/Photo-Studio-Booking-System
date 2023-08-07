@@ -40,8 +40,7 @@ include 'session_check.php';
             <div class="col-md-6">
                 <div class="reservation-button">
                     <a href="reservation_page.php">
-                        <button class="btn btn" id="reservationBtn" disabled style="color: #fff;">Make a
-                            Reservation</button>
+                        <button class="btn" id="reservationBtn" disabled>Make a Reservation</button>
                     </a>
                 </div>
             </div>
@@ -49,42 +48,53 @@ include 'session_check.php';
 
         <div class="row mt-5">
             <div class="col-md-6">
-                <div class="demo-photo-card">
-                    <main id="carousel">
-                        <div class="item">
-                            <img src="assets/images/studio_dummy.jpg" alt="Image 1" width="300" height="400">
-                        </div>
-                        <div class="item">
-                            <img src="assets/images/studio_dummy2.jpg" alt="Image 2" width="300" height="400">
-                        </div>
-                        <div class="item">
-                            <img src="assets/images/studio_dummy3.jpg" alt="Image 3" width="300" height="400">
-                        </div>
-                        <div class="item">
-                            <img src="assets/images/studio_dummy4.jpg" alt="Image 4" width="300" height="400">
-                        </div>
-                        <div class="item">
-                            <img src="assets/images/studio_dummy5.jpg" alt="Image 5" width="300" height="400">
-                        </div>
-                    </main>
-
-                    <div class="radio-buttons d-flex justify-content-center mt-3">
-                        <input type="radio" name="carousel-radio" id="radio1" checked>
-                        <div class="radio-spacing"></div>
-                        <input type="radio" name="carousel-radio" id="radio2">
-                        <div class="radio-spacing"></div>
-                        <input type="radio" name="carousel-radio" id="radio3">
-                        <div class="radio-spacing"></div>
-                        <input type="radio" name="carousel-radio" id="radio4">
-                        <div class="radio-spacing"></div>
-                        <input type="radio" name="carousel-radio" id="radio5">
-                    </div>
-
-                    <div class="card-body">
-                        <h5 class="card-title">Demo Photo</h5>
-                        <p class="card-text">This is a demo photo to showcase the quality of our photography.</p>
-                    </div>
-                </div>
+                <section class="carousel" aria-label="Gallery">
+                    <ol class="carousel__viewport">
+                        <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+                            <div class="carousel__snapper">
+                                <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
+                                <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
+                                <img class="img" src="assets/images/carousel_img1.jpg" alt="Image 1">
+                            </div>
+                        </li>
+                        <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+                            <div class="carousel__snapper"></div>
+                            <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
+                            <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
+                            <img class="img" src="assets/images/carousel_img2.jpeg" alt="Image 1">
+                        </li>
+                        <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+                            <div class="carousel__snapper"></div>
+                            <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
+                            <a href="#carousel__slide4" class="carousel__next">Go to next slide</a>
+                            <img class="img" src="assets/images/carousel_img3.jpg" alt="Image 3">
+                        </li>
+                        <li id="carousel__slide4" tabindex="0" class="carousel__slide">
+                            <div class="carousel__snapper"></div>
+                            <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a>
+                            <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
+                            <img class="img" src="assets/images/carousel_img4.jpg" alt="Image 4">
+                        </li>
+                    </ol>
+                    <aside class="carousel__navigation">
+                        <ol class="carousel__navigation-list">
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide1" class="carousel__navigation-button">Go to slide 1</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide2" class="carousel__navigation-button">Go to slide 2</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide3" class="carousel__navigation-button">Go to slide 3</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide4" class="carousel__navigation-button">Go to slide 4</a>
+                            </li>
+                        </ol>
+                    </aside>
+                </section>
+                <h1 class="demo">Demo Photos</h1>
+                <p class="demo">This is a demo photo to showcase the quality of our photography.</p>
             </div>
             <div class="col-md-6">
                 <div class="card package-details-card">
@@ -107,15 +117,17 @@ include 'session_check.php';
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="price"><i class="fas fa-dollar-sign"></i> Price:</label>
+                            <label for="price" class="fa-dollar-sign"><i></i> Price:</label>
+
                             <p id="packagePrice">LKR.0</p>
                         </div>
                         <div class="form-group">
-                            <label for="additional-price"><i class="fas fa-dollar-sign"></i> Additional Price:</label>
+                            <label for="total-price"  class="fa-dollar-sign"><i></i>Additional Price:</label>
+
                             <p id="additionalPrice">LKR.0</p>
                         </div>
                         <div class="form-group">
-                            <label for="total-price"><i class="fas fa-dollar-sign"></i> Total:</label>
+                            <label for="total-price" class="total"><i class="fas fa-dollar-sign"></i>Total:</label>
                             <p id="totalPrice">LKR.0</p>
                         </div>
                     </div>
@@ -127,8 +139,8 @@ include 'session_check.php';
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function () {
-            $('#packageSelect').change(function () {
+        $(document).ready(function() {
+            $('#packageSelect').change(function() {
                 var selectedPackage = $('#packageSelect').val();
                 var basePrice = 0;
                 var additionalPrice = 0;
@@ -159,7 +171,7 @@ include 'session_check.php';
                 }
             });
 
-            $('#number-of-persons, #number-of-photos').change(function () {
+            $('#number-of-persons, #number-of-photos').change(function() {
                 var selectedPackage = $('#packageSelect').val();
                 var basePrice = 0;
                 var additionalPrice = 0;
@@ -192,7 +204,7 @@ include 'session_check.php';
         });
     </script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             var carouselItems = Array.from(document.querySelectorAll("#carousel .item"));
             var position = 1;
 
@@ -220,8 +232,8 @@ include 'session_check.php';
                 clearInterval(interval);
             }
 
-            radioButtons.forEach(function (radioButton, index) {
-                radioButton.addEventListener('click', function () {
+            radioButtons.forEach(function(radioButton, index) {
+                radioButton.addEventListener('click', function() {
                     position = index + 1;
                     updateCarousel();
                 });

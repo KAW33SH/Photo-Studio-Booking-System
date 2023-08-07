@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+
 .logout {
+    font-family: 'Noto Sans', sans-serif !important;
     background-color: transparent;
     border: none;
     color: #ddd;
@@ -14,4 +17,42 @@
     color: #ddd;
     text-decoration: underline;
     outline: none;
+}
+
+/* Add !important to override existing styles */
+.navbar {
+    background-color: black !important;
+    height: 80px !important;
+}
+
+.navbar a.nav-link {
+    color: #ffffff !important;
+    font-family: 'Noto Sans', sans-serif !important;
+    font-size: 18px !important;
+}
+
+.navbar .navbar-brand {
+    color: #ffffff !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: 24px !important;
+}
+
+.navbar .nav-item.active .nav-link {
+    background-color: #333333 !important;
+    /* Change this color to your desired color for the active item */
+    color: #ffffff !important;
+    /* Add custom border styles for the active item */
+    border: 2px solid #ffffff;
+    /* Change this color to your desired border color */
+    border-radius: 20px;
+    /* Change the border-radius to adjust the corner shape */
+    padding: 5px 10px;
+    /* Add some padding to the active item */
+}
+
+/* Change the color of navigation items when hovered */
+.navbar .nav-item .nav-link:hover {
+    background-color: #444444 !important;
+    /* Change this color to your desired color for the hovered item */
+    color: #ffffff !important;
 }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,28 +9,28 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
+
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+
 }
 
 .studio-package {
-    margin-top: 50px;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
+
 }
 
 .package-card {
     width: 300px;
     height: 450px;
-    margin: 20px;
+
     padding: 20px;
-    background-image: linear-gradient(to bottom, #2db6ff, #c24bff);
+    background-color: #72777a;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     text-align: center;
     display: flex;
@@ -40,11 +42,24 @@ body {
 .package-card h3 {
     font-size: 24px;
     margin-bottom: 10px;
+    color: #000000;
+    text-shadow:
+        -1px -1px 0 #adaaa5,
+        /* Top left */
+        1px -1px 0 #adaaa5,
+        /* Top right */
+        -1px 1px 0 #adaaa5,
+        /* Bottom left */
+        1px 1px 0 #adaaa5;
+    /* Bottom right */
+    font-family: 'Lilita One', cursive;
 }
 
 .package-card p {
     font-size: 16px;
     margin-bottom: 20px;
+    color: #242424;
+    font-family: 'Source Code Pro', monospace;
 }
 
 .package-card-content {
@@ -54,18 +69,19 @@ body {
 .view-details-btn a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #0b92aa;
+    background-color: #363636c1;
     color: #fff;
     text-decoration: none;
     font-size: 16px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
     border: none;
+    
 }
 
 .view-details-btn a:hover {
-    background-color: #127688;
-    box-shadow: none; 
+    background-color: #adaaa5;
+    box-shadow: none;
 }
 
 .login-register-button {
@@ -77,16 +93,31 @@ body {
 
 .login-register-button a {
     padding: 10px 20px;
-    background-color: #0b92aa;
+    background-color: #000000aa;
     color: #fff;
     text-decoration: none;
     font-size: 16px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    position: fixed;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Lilita One', cursive;
+    text-shadow:
+    -1px -1px 0 #000000,
+    /* Top left */
+    1px -1px 0 #000000,
+    /* Top right */
+    -1px 1px 0 #000000,
+    /* Bottom left */
+    1px 1px 0 #000000;
+/* Bottom right */
 }
 
 .login-register-button a:hover {
-    background-color: #127688;
+    background-color: #adaaa5;
+    color: #fff;
 }
 
 .center-content {
@@ -95,9 +126,89 @@ body {
     align-items: center;
 }
 
-.row.justify-content-center.mt-5 { 
-    margin-top: 12rem !important;
+.row.justify-content-center.mt-5 {
+    margin-top: 8rem !important;
+
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+.stack {
+    width: 85%;
+    max-width: 400px;
+    transition: .25s ease;
+
+    &:hover {
+        transform: rotate(5deg);
+
+        .card:before {
+            transform: translatey(-2%) rotate(-4deg);
+        }
+
+        .card:after {
+            transform: translatey(2%) rotate(4deg);
+        }
+    }
+}
+
+.card {
+    aspect-ratio: 3 / 2;
+    border: 4px solid;
+    background-color: #383d40 !important;
+    position: relative;
+    transition: .15s ease;
+    cursor: pointer;
+    padding: 5% 5% 15% 5%;
+    width: 325px;
+
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border: 4px solid;
+        background-color: #adaaa5 !important;
+        transform-origin: center center;
+        z-index: -1;
+        transition: .15s ease;
+        top: 0;
+        left: 0;
+    }
+
+    &:before {
+        transform: translatey(-2%) rotate(-6deg);
+    }
+
+    &:after {
+        transform: translatey(2%) rotate(6deg);
+    }
 
 
+
+}
+
+.image {
+    width: 100%;
+    border: 4px solid;
+    background-color: #EEE;
+    aspect-ratio: 1 / 1;
+    position: relative;
+}
+
+.browser-warning {
+    margin-bottom: 4rem;
+}
+
+@supports (aspect-ratio: 1 / 1) {
+    .browser-warning {
+        display: none;
+    }
+}

@@ -14,7 +14,8 @@ body {
   }
   
   .card {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.726) !important;
+    background: linear-gradient(to right, rgba(105, 105, 105, 0.349), rgba(255, 255, 255, 0.233)) !important;
   }
   
   .card-body {
@@ -42,3 +43,29 @@ body {
   .d-flex.justify-content-center {
     justify-content: center;
   }
+
+  h5.card-title {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #ffffff!important;
+    font-weight: bold!important;
+        text-shadow:
+        -1px -1px 0 #0000009c,
+        /* Top left */
+        1px -1px 0 #0000009c,
+        /* Top right */
+        -1px 1px 0 #0000009c,
+        /* Bottom left */
+        1px 1px 0 #0000009c;
+    /* Bottom right */
+    text-align: center;
+  }
+
+  .table th {
+    color: #000000 !important;
+  }
+
+  .table td {
+    color: #ffffff !important;
+  }
+  

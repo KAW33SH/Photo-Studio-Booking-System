@@ -14,8 +14,12 @@ body {
 }
 
 .card {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-}
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.726) !important;
+    background: linear-gradient(to right, rgba(105, 105, 105, 0.349), rgba(255, 255, 255, 0.233)) !important;
+    margin-left: 100px;
+    width: 850px;
+  }
+  
 
 .card-body {
     padding: 20px;
@@ -32,4 +36,77 @@ body {
 
 .btn-primary {
     width: 100%;
+}
+
+.form-control {
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #555 !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+.form-group {
+    color: #000000!important;
+    font-weight: bold!important;
+        text-shadow:
+        -1px -1px 0 #ffffff9c,
+        /* Top left */
+        1px -1px 0 #ffffff9c,
+        /* Top right */
+        -1px 1px 0 #ffffff9c,
+        /* Bottom left */
+        1px 1px 0 #ffffff9c;
+    /* Bottom right */
+}
+
+.form-control::placeholder {
+    color: #202020!important; /* Change this color to your desired color for the placeholder */
+  }
+
+  .card-title {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #ffffff!important;
+    font-weight: bold!important;
+        text-shadow:
+        -1px -1px 0 #0000009c,
+        /* Top left */
+        1px -1px 0 #0000009c,
+        /* Top right */
+        -1px 1px 0 #0000009c,
+        /* Bottom left */
+        1px 1px 0 #0000009c;
+    /* Bottom right */
+    text-align: center;
+  }
+
+  .button {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #c7c7c7;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin-left: 290px;
+    margin-top: 20px;
+
+}
+
+.button:hover {
+    background-color: #0000009d;
+    box-shadow: 0px 15px 20px rgba(255, 255, 255, 0.623);
+    color: #ffffff;
+    transform: translateY(-7px);
+}
+
+.button:active {
+    transform: translateY(-1px);
 }

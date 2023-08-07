@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="assets/css/image_loader.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@600&display=swap" rel="stylesheet">
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             var loader = document.querySelector(".loader");
             var content = document.querySelector(".content");
 
@@ -23,7 +26,7 @@
             }
 
             // Hide the loader and show the content after a delay
-            setTimeout(function () {
+            setTimeout(function() {
                 loader.style.display = "none";
                 content.style.display = "block";
             }, 2000); // Adjusted delay time to 2000 milliseconds (2 seconds)
@@ -44,20 +47,18 @@
         <div class="card">
             <div class="card-body">
                 <div class="tab-content">
-                    <div class="tab-pane fade <?php echo $_SESSION['active_tab'] === 'login-form' ? 'show active' : ''; ?>"
-                        id="login-form">
+                    <div class="tab-pane fade <?php echo $_SESSION['active_tab'] === 'login-form' ? 'show active' : ''; ?>" id="login-form">
                         <h5 class="card-title">Login</h5>
 
                         <form action="user_login_controller.php" method="post">
                             <div class="form-group">
                                 <label for="email-login">Email</label>
-                                <input type="email" class="form-control" name="email-login" required>
+                                <input type="email" class="form-control" name="email-login" placeholder="Enter your email" required>
                             </div>
                             <div class="form-group">
                                 <label for="password-login">Password</label>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" id="password-login"
-                                        name="password-login" required>
+                                    <input type="password" class="form-control" id="password-login" name="password-login" placeholder="Enter your password" required>
                                     <div class="input-group-append">
                                         <span class="password-icon" onclick="togglePassword('password-login')">
                                             <i class="fas fa-eye"></i>
@@ -65,12 +66,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="submit" class="button">Login</button>
                         </form>
 
                     </div>
-                    <div class="tab-pane fade <?php echo $_SESSION['active_tab'] === 'register-form' ? 'show active' : ''; ?>"
-                        id="register-form">
+                    <div class="tab-pane fade <?php echo $_SESSION['active_tab'] === 'register-form' ? 'show active' : ''; ?>" id="register-form">
                         <h5 class="card-title">Register</h5>
 
 
@@ -78,17 +78,16 @@
 
                             <div class="form-group">
                                 <label for="name-register">Name</label>
-                                <input type="text" class="form-control" name="name-register" required>
+                                <input type="text" class="form-control" name="name-register" placeholder="Enter your name" required>
                             </div>
                             <div class="form-group">
                                 <label for="email-register">Email</label>
-                                <input type="email" class="form-control" name="email-register" required>
+                                <input type="email" class="form-control" name="email-register" placeholder="Enter your email" required>
                             </div>
                             <div class="form-group">
                                 <label for="password-register">Password</label>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" id="password-register"
-                                        name="password-register" required>
+                                    <input type="password" class="form-control" id="password-register" name="password-register" placeholder="Enter your a new password" required>
                                     <div class="input-group-append">
                                         <span class="password-icon" onclick="togglePassword('password-register')">
                                             <i class="fas fa-eye"></i>
@@ -99,11 +98,9 @@
                             <div class="form-group">
                                 <label for="confirm-password-register">Confirm Password</label>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" id="confirm-password-register"
-                                        name="confirm-password-register" required oninput="checkPasswordMatch()">
+                                    <input type="password" class="form-control" id="confirm-password-register" name="confirm-password-register" placeholder="Renter your password" required oninput="checkPasswordMatch()">
                                     <div class="input-group-append">
-                                        <span class="password-icon"
-                                            onclick="togglePassword('confirm-password-register')">
+                                        <span class="password-icon" onclick="togglePassword('confirm-password-register')">
                                             <i class="fas fa-eye"></i>
                                         </span>
                                     </div>
@@ -112,14 +109,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="address-register">Address</label>
-                                <input type="text" class="form-control" name="address-register" required>
+                                <input type="text" class="form-control" name="address-register" placeholder="Enter your address" required>
                             </div>
                             <div class="form-group">
                                 <label for="phone-register">Phone</label>
-                                <input type="text" class="form-control" name="phone-register" required>
+                                <input type="text" class="form-control" name="phone-register" placeholder="Enter your phone number" required>
                             </div>
-                            <button type="submit" name="register" class="btn btn-primary" id="register-button"
-                                disabled>Register</button>
+                            <button type="submit" name="register" class="button" id="register-button" disabled>Register</button>
 
 
                         </form>
@@ -128,14 +124,12 @@
                 </div>
             </div>
             <div class="card-footer">
-                <ul class="nav nav-tabs card-footer-tabs justify-content-center">
+                <ul class="nav nav-tabs card-footer-tabs justify-content-center" style="border:none;">
                     <li class="nav-item">
-                        <a class="nav-link <?php echo $_SESSION['active_tab'] === 'login-form' ? 'active' : ''; ?>"
-                            id="login-tab" data-toggle="tab" href="#login-form">Login</a>
+                        <a class="nav-link <?php echo $_SESSION['active_tab'] === 'login-form' ? 'active' : ''; ?>" id="login-tab" data-toggle="tab" href="#login-form">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php echo $_SESSION['active_tab'] === 'register-form' ? 'active' : ''; ?>"
-                            id="register-tab" data-toggle="tab" href="#register-form">Register</a>
+                        <a class="nav-link <?php echo $_SESSION['active_tab'] === 'register-form' ? 'active' : ''; ?>" id="register-tab" data-toggle="tab" href="#register-form">Register</a>
                     </li>
                 </ul>
             </div>
@@ -163,6 +157,7 @@
                 passwordIcon.classList.add('fa-eye');
             }
         }
+
         function checkPasswordMatch() {
             var passwordInput = document.getElementById('password-register');
             var confirmPasswordInput = document.getElementById('confirm-password-register');

@@ -17,7 +17,7 @@
                     <div class="form-group">
                         <input type="text" class="form-control" name="otp" placeholder="Enter OTP" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Verify</button>
+                    <button type="submit" class="button">Verify</button>
                 </form>
                 <form action="user_login_controller.php" method="POST">
                     <p class="resend-link">Didn't receive the OTP? <button type="submit" class="btn btn-link"

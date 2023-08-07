@@ -53,7 +53,7 @@ include 'session_check.php';
                         <input type="number" class="form-control" id="price" name="price"
                             placeholder="Enter Advance Payment Price" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Make Reservation</button>
+                    <button type="submit" class="button">Make Reservation</button>
                 </form>
             </div>
         </div>
